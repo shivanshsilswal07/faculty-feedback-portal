@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the Faculty Feedback and Course Evaluation Portal project.">
+  <title>About the Portal | Faculty Feedback Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portal crest">
+          <circle cx="20" cy="20" r="19" fill="#243B66" stroke="#B1802F" stroke-width="2"/>
+          <path d="M20 10 L30 15 L20 20 L10 15 Z" fill="#F1E2C3"/>
+          <path d="M12 17 V24 C12 27 27 27 28 24 V17" fill="none" stroke="#F1E2C3" stroke-width="1.6"/>
+        </svg>
+        <span>LPU Feedback Portal<span class="brand-sub">Faculty &amp; Course Evaluation</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Student Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses &amp; Faculty</a></li>
+          <li><a href="feedback.html">Give Feedback</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">About</p>
+          <h1>About this portal</h1>
+          <p>A CA1 academic project built to demonstrate HTML fundamentals, semantic HTML and HTML forms in a realistic setting.</p>
+        </div>
+
+        <article>
+          <h2>The problem</h2>
+          <p>Course feedback at most institutions is collected on paper at the end of the semester, or through a generic form tool that wasn't designed for academic evaluation. The result is slow collection, inconsistent questions across departments, and data that nobody can easily summarize. Students also hesitate to answer honestly when they aren't sure whether their name is attached.</p>
+
+          <h2>The solution</h2>
+          <p>This portal puts the whole cycle in one place: a structured rating form built around defined evaluation criteria, an explicit anonymous option, a check that stops the same student submitting twice for the same course, and an administrator dashboard that shows averages and comparisons as visuals rather than raw rows.</p>
+        </article>
+
+        <hr>
+
+        <!-- ===== AUDIO: accessibility introduction ===== -->
+        <article>
+          <h2>Audio introduction</h2>
+          <p>A spoken summary of how to use the portal, provided for students who prefer listening or use screen readers.</p>
+          <figure>
+            <audio controls>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">Download the audio file</a>.
+            </audio>
+            <figcaption>Portal audio introduction (sample clip used for CA1 demonstration purposes).</figcaption>
+          </figure>
+        </article>
+
+        <hr>
+
+        <article id="tech">
+          <h2>Technologies used</h2>
+          <dl class="def-list">
+            <dt>HTML5</dt><dd>Page structure, semantic sectioning elements, forms, tables, media elements.</dd>
+            <dt>CSS3</dt><dd>Custom properties, Grid, Flexbox, media queries, focus and hover states.</dd>
+            <dt>JavaScript</dt><dd>Form validation, dynamic dropdowns, duplicate-submission simulation, chart rendering.</dd>
+            <dt>GitHub Pages</dt><dd>Static hosting — no server, no database, no build step.</dd>
+          </dl>
+        </article>
+
+        <hr>
+
+        <article id="viva">
+          <h2>What this project honestly is — and isn't</h2>
+          <p>Being clear about limitations is part of the project, not a weakness in it.</p>
+          <ul class="feature-list">
+            <li><strong>No real authentication.</strong> The login page simulates a session using <mark>localStorage</mark>. Any Student ID and email will "work". Passwords are never stored or verified.</li>
+            <li><strong>No database.</strong> Feedback submissions are not sent anywhere. Duplicate-submission prevention writes a flag to the browser's own storage, which the student could clear.</li>
+            <li><strong>Analytics are sample data.</strong> The ratings and counts shown on the Analytics and Admin pages are fixed demo values written into <code>script.js</code>.</li>
+            <li><strong>No access control.</strong> The Admin Dashboard is reachable by anyone, because static hosting cannot restrict pages.</li>
+          </ul>
+
+          <h3>What a production version would add</h3>
+          <ol class="feature-list">
+            <li>A backend server and a real database to store submissions.</li>
+            <li>Server-side authentication with hashed passwords and session tokens.</li>
+            <li>Role-based access so only staff reach the admin dashboard.</li>
+            <li>A server-enforced uniqueness rule on (student, course, faculty) so duplicates cannot be bypassed.</li>
+            <li>True anonymization, where the identifier is stripped before the response is stored.</li>
+          </ol>
+        </article>
+
+        <hr>
+
+        <article>
+          <h2>Project FAQ</h2>
+          <details>
+            <summary>Why no framework?</summary>
+            <p>The CA1 syllabus covers HTML fundamentals and semantic HTML and forms. A framework would hide exactly the concepts being assessed. Everything here is plain HTML, CSS and JavaScript.</p>
+          </details>
+          <details>
+            <summary>Why is localStorage used at all?</summary>
+            <p>Because GitHub Pages serves static files only. localStorage is the simplest way to demonstrate session and duplicate-check behaviour in the browser, and it's clearly labelled as a demonstration everywhere it appears.</p>
+          </details>
+          <details>
+            <summary>Are the faculty names real?</summary>
+            <p>No. All faculty names, courses, ratings and comments are fictional sample data created for this project.</p>
+          </details>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year"></span> LPU Feedback Portal. Academic demo project.</span>
+        <span><a href="contact.html" style="color:#cfd5e4;">Contact / Help</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

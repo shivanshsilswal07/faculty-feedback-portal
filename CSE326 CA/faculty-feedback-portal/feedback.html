@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit structured course and faculty feedback.">
+  <title>Give Feedback | Faculty Feedback Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portal crest">
+          <circle cx="20" cy="20" r="19" fill="#243B66" stroke="#B1802F" stroke-width="2"/>
+          <path d="M20 10 L30 15 L20 20 L10 15 Z" fill="#F1E2C3"/>
+          <path d="M12 17 V24 C12 27 27 27 28 24 V17" fill="none" stroke="#F1E2C3" stroke-width="1.6"/>
+        </svg>
+        <span>LPU Feedback Portal<span class="brand-sub">Faculty &amp; Course Evaluation</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Student Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses &amp; Faculty</a></li>
+          <li><a href="feedback.html" aria-current="page">Give Feedback</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Course Evaluation</p>
+          <h1>Give Feedback</h1>
+          <p>Rate your course and faculty on the criteria below. Fields marked required must be completed before submitting.</p>
+        </div>
+
+        <p class="demo-note">
+          <strong>Demo notice:</strong> Submissions are stored only in this browser's <code>localStorage</code>, not on a
+          real server. Submitting feedback twice for the same course-and-faculty pairing will be blocked, demonstrating
+          duplicate-submission prevention.
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap:2.5rem; align-items:flex-start;">
+
+          <form id="feedback-form" novalidate>
+            <div id="feedback-msg" class="form-msg" role="status" aria-live="polite"></div>
+
+            <!-- STUDENT INFORMATION -->
+            <fieldset>
+              <legend>Student Information</legend>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="fb-student-id">Student ID</label>
+                  <input type="text" id="fb-student-id" name="studentId" placeholder="e.g. 12312345"
+                         maxlength="15" autocomplete="username">
+                  <small class="hint">Optional if submitting anonymously.</small>
+                </div>
+                <div class="field">
+                  <label for="fb-email">Email</label>
+                  <input type="email" id="fb-email" name="email" placeholder="name@university.edu" autocomplete="email">
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="fb-course">Course</label>
+                  <select id="fb-course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="CSE101">CSE101 — Programming Fundamentals</option>
+                    <option value="CSE102">CSE102 — Computer Organization</option>
+                    <option value="CSE103">CSE103 — Data Structures</option>
+                    <option value="CSE104">CSE104 — Web Technologies</option>
+                    <option value="MTH101">MTH101 — Engineering Mathematics</option>
+                    <option value="PHY101">PHY101 — Engineering Physics</option>
+                    <option value="ENG101">ENG101 — Communication Skills</option>
+                    <option value="ECE101">ECE101 — Basic Electronics</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fb-faculty">Faculty</label>
+                  <select id="fb-faculty" name="faculty" required>
+                    <option value="">Select course first</option>
+                  </select>
+                  <small class="hint">Updates automatically based on the course chosen.</small>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="fb-section">Section</label>
+                  <input type="text" id="fb-section" name="section" placeholder="e.g. K21GG" maxlength="10">
+                </div>
+                <div class="field">
+                  <label for="fb-semester">Semester</label>
+                  <select id="fb-semester" name="semester">
+                    <option value="">Select semester</option>
+                    <option>Semester 1</option>
+                    <option>Semester 2</option>
+                    <option>Semester 3</option>
+                    <option>Semester 4</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- FEEDBACK MODE -->
+            <fieldset>
+              <legend>Feedback Mode</legend>
+              <p style="margin-top:0;"><small>Anonymous mode hides your name and Student ID from anything administrators see. Identified mode keeps your details attached to this submission.</small></p>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="fb-mode" value="anonymous" required>
+                  <span><strong>Anonymous</strong> — my identity will not be shown with this feedback</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="fb-mode" value="identified" required>
+                  <span><strong>Identified</strong> — my Student ID may be shown with this feedback</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- COURSE EVALUATION -->
+            <fieldset>
+              <legend>Course Evaluation</legend>
+
+              <div class="field">
+                <label for="rating-overall">Overall course rating</label>
+                <div class="range-row">
+                  <input type="range" id="rating-overall" name="ratingOverall" min="1" max="5" step="1" value="4" data-output="out-overall">
+                  <span class="range-output" id="out-overall">4</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rating-clarity">Faculty explanation clarity</label>
+                <div class="range-row">
+                  <input type="range" id="rating-clarity" name="ratingClarity" min="1" max="5" step="1" value="4" data-output="out-clarity">
+                  <span class="range-output" id="out-clarity">4</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rating-effectiveness">Teaching effectiveness</label>
+                <div class="range-row">
+                  <input type="range" id="rating-effectiveness" name="ratingEffectiveness" min="1" max="5" step="1" value="4" data-output="out-effectiveness">
+                  <span class="range-output" id="out-effectiveness">4</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rating-knowledge">Subject knowledge</label>
+                <div class="range-row">
+                  <input type="range" id="rating-knowledge" name="ratingKnowledge" min="1" max="5" step="1" value="5" data-output="out-knowledge">
+                  <span class="range-output" id="out-knowledge">5</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rating-interaction">Interaction with students</label>
+                <div class="range-row">
+                  <input type="range" id="rating-interaction" name="ratingInteraction" min="1" max="5" step="1" value="3" data-output="out-interaction">
+                  <span class="range-output" id="out-interaction">3</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rating-examples">Use of examples</label>
+                <div class="range-row">
+                  <input type="range" id="rating-examples" name="ratingExamples" min="1" max="5" step="1" value="4" data-output="out-examples">
+                  <span class="range-output" id="out-examples">4</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rating-material">Course material quality</label>
+                <select id="rating-material" name="ratingMaterial">
+                  <option value="5">Excellent</option>
+                  <option value="4" selected>Good</option>
+                  <option value="3">Average</option>
+                  <option value="2">Below average</option>
+                  <option value="1">Poor</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="rating-punctuality">Punctuality</label>
+                <select id="rating-punctuality" name="ratingPunctuality">
+                  <option value="5">Always on time</option>
+                  <option value="4" selected>Usually on time</option>
+                  <option value="3">Sometimes late</option>
+                  <option value="2">Often late</option>
+                  <option value="1">Rarely on time</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="rating-doubts">Doubt clarification</label>
+                <div class="range-row">
+                  <input type="range" id="rating-doubts" name="ratingDoubts" min="1" max="5" step="1" value="4" data-output="out-doubts">
+                  <span class="range-output" id="out-doubts">4</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- WRITTEN FEEDBACK -->
+            <fieldset>
+              <legend>Written Feedback</legend>
+              <div class="field">
+                <label for="fb-liked">What did you like about the course?</label>
+                <textarea id="fb-liked" name="liked" maxlength="600" placeholder="e.g. Clear explanations, useful in-class examples..."></textarea>
+              </div>
+              <div class="field">
+                <label for="fb-improve">What can be improved?</label>
+                <textarea id="fb-improve" name="improve" maxlength="600" placeholder="e.g. More practice problems before the quiz..."></textarea>
+              </div>
+              <div class="field">
+                <label for="fb-suggestions">Additional suggestions</label>
+                <textarea id="fb-suggestions" name="suggestions" maxlength="600" placeholder="Optional"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- RECOMMENDATION -->
+            <fieldset>
+              <legend>Recommendation</legend>
+              <p style="margin-top:0;"><small>Would you recommend this course/faculty to a junior?</small></p>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="fb-recommend" value="definitely"><span>Definitely recommend</span></label>
+                <label class="radio-option"><input type="radio" name="fb-recommend" value="probably" checked><span>Probably recommend</span></label>
+                <label class="radio-option"><input type="radio" name="fb-recommend" value="not-sure"><span>Not sure</span></label>
+                <label class="radio-option"><input type="radio" name="fb-recommend" value="probably-not"><span>Probably not</span></label>
+                <label class="radio-option"><input type="radio" name="fb-recommend" value="definitely-not"><span>Definitely not</span></label>
+              </div>
+            </fieldset>
+
+            <!-- CONFIRMATION -->
+            <div class="confirm-box field">
+              <label class="checkbox-option" style="font-weight:400;">
+                <input type="checkbox" id="fb-confirm" name="confirm" required>
+                <span>I confirm that this feedback is genuine and submitted for academic evaluation.</span>
+              </label>
+            </div>
+
+            <div class="btn-row">
+              <button type="submit" class="btn btn-primary">Submit Feedback</button>
+              <button type="reset" class="btn btn-ghost">Reset Form</button>
+            </div>
+          </form>
+
+          <!-- FEEDBACK GUIDELINES ASIDE -->
+          <aside class="card" aria-label="Feedback guidelines">
+            <h3>Rating scale reference</h3>
+            <dl class="def-list">
+              <dt>5</dt><dd>Excellent</dd>
+              <dt>4</dt><dd>Good</dd>
+              <dt>3</dt><dd>Average</dd>
+              <dt>2</dt><dd>Below average</dd>
+              <dt>1</dt><dd>Poor</dd>
+            </dl>
+            <hr>
+            <h3>Quick guidelines</h3>
+            <ul class="guideline-list">
+              <li>Answer based on this semester only.</li>
+              <li>Written feedback should be specific and constructive.</li>
+              <li>You can submit once per course-and-faculty pairing.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year"></span> LPU Feedback Portal. Academic demo project.</span>
+        <span><a href="analytics.html" style="color:#cfd5e4;">See results</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

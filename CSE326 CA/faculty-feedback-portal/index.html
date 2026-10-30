@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Faculty Feedback and Course Evaluation Portal — a student-built academic feedback system.">
+  <title>Home | Faculty Feedback &amp; Course Evaluation Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portal crest">
+          <circle cx="20" cy="20" r="19" fill="#243B66" stroke="#B1802F" stroke-width="2"/>
+          <path d="M20 10 L30 15 L20 20 L10 15 Z" fill="#F1E2C3"/>
+          <path d="M12 17 V24 C12 27 27 27 28 24 V17" fill="none" stroke="#F1E2C3" stroke-width="1.6"/>
+        </svg>
+        <span>LPU Feedback Portal<span class="brand-sub">Faculty &amp; Course Evaluation</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="login.html">Student Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses &amp; Faculty</a></li>
+          <li><a href="feedback.html">Give Feedback</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">CA1 Academic Project &middot; LPU</p>
+          <h1>Honest course feedback, organized in one place.</h1>
+          <p>The Faculty Feedback &amp; Course Evaluation Portal lets students rate courses and faculty using simple forms, and lets administrators read the results as clear, visual summaries — without paper forms or scattered spreadsheets.</p>
+          <div class="btn-row">
+            <a href="feedback.html" class="btn btn-accent">Give Feedback</a>
+            <a href="courses.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">View Courses</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>8</strong><span>Courses tracked</span></div>
+            <div><strong>6</strong><span>Faculty members</span></div>
+            <div><strong>4.4/5</strong><span>Average rating (demo)</span></div>
+          </div>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+               alt="Students in a lecture hall filling out course evaluation forms on paper and laptops">
+          <figcaption>Feedback season at the end of every semester used to mean stacks of paper forms — this portal replaces that with a short online form.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What the portal does</p>
+          <h2>Everything needed to collect and read academic feedback</h2>
+          <p>Built around the four things a feedback system actually needs: a simple form, a way to stay anonymous, protection against duplicate answers, and a dashboard that turns numbers into a picture.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Structured rating forms</h3>
+            <p>Students rate teaching effectiveness, clarity, punctuality and more using stars, sliders and scales — not a single vague "how was it?" box.</p>
+          </article>
+          <article class="card">
+            <h3>Anonymous or identified</h3>
+            <p>Every submission lets the student choose whether their name is attached to their answers, explained clearly at the point of choice.</p>
+          </article>
+          <article class="card">
+            <h3>Duplicate-submission checks</h3>
+            <p>Once feedback is submitted for a course and faculty pairing, the form recognizes it and stops a second submission for the same pairing.</p>
+          </article>
+          <article class="card">
+            <h3>Visual admin dashboard</h3>
+            <p>Administrators see average ratings, bar-style comparisons, and course-wise or faculty-wise breakdowns at a glance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section-alt" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Process</p>
+          <h2>How feedback moves through the portal</h2>
+        </div>
+        <ol class="feature-list">
+          <li><strong>Log in</strong> — the student signs in with their Student ID (demo login, explained on the About page).</li>
+          <li><strong>Select a course</strong> — the course list is mapped to the faculty who actually teach it, using the Course &amp; Faculty Mapping table.</li>
+          <li><strong>Rate and write feedback</strong> — the student rates several aspects of the course and can add written comments.</li>
+          <li><strong>Confirm and submit</strong> — a confirmation checkbox is required before the form can be sent.</li>
+          <li><strong>Review results</strong> — administrators read summarized averages and charts on the Admin Dashboard.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ VIDEO SECTION ============ -->
+    <section class="section" id="how-feedback-works-video">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Watch</p>
+          <h2>How Feedback Works — a 90-second walkthrough</h2>
+          <p>A short explainer video showing a student submitting a course evaluation from start to finish.</p>
+        </div>
+        <figure>
+          <video controls width="100%" height="auto"
+                 poster="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Your browser does not support the video tag. You can
+            <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">download the video</a> instead.
+          </video>
+          <figcaption>Demo walkthrough video (sample clip used for CA1 demonstration purposes).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ GUIDELINES / DEFINITION LIST ============ -->
+    <section class="section section-alt" id="guidelines">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Before you submit</p>
+          <h2>Feedback guidelines</h2>
+        </div>
+        <dl class="def-list">
+          <dt>Be specific</dt>
+          <dd>Mention what actually helped or didn't — "more solved examples in class" is more useful than "make it better".</dd>
+          <dt>Be respectful</dt>
+          <dd>Feedback is read by real people. Describe the teaching, not the person.</dd>
+          <dt>One submission per pairing</dt>
+          <dd>Each course-and-faculty combination accepts one feedback submission per student, per semester.</dd>
+          <dt>Anonymous means anonymous</dt>
+          <dd>If you choose anonymous mode, your name and ID are never shown with your ratings.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <details>
+          <summary>Can I edit my feedback after submitting?</summary>
+          <p>Not in this version. This keeps evaluation data consistent for the semester it was submitted in.</p>
+        </details>
+        <details>
+          <summary>Is my anonymous feedback really untraceable?</summary>
+          <p>In this demo, anonymous submissions are stored without any student identifier attached, so nothing links the response back to you within the portal.</p>
+        </details>
+        <details>
+          <summary>Who can see the Admin Dashboard?</summary>
+          <p>In a real deployment, only authorized staff. In this CA1 demo, the Admin page is open for evaluation purposes and clearly marked as sample data.</p>
+        </details>
+        <details>
+          <summary>Does this project use a real database?</summary>
+          <p>No — this is a static frontend project built with HTML, CSS and JavaScript for GitHub Pages. Login and duplicate-submission checks are simulated with <mark>localStorage</mark>, explained on the About page.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>LPU Feedback Portal</h4>
+          <p style="color:#cfd5e4; max-width: 32ch;">A CA1 academic project demonstrating HTML fundamentals, semantic HTML and forms.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="courses.html">Courses &amp; Faculty</a></li>
+            <li><a href="feedback.html">Give Feedback</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Student Login</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="contact.html">Contact / Help</a></li>
+            <li><a href="about.html#viva">Project Notes</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year"></span> LPU Feedback Portal. Academic demo project — not affiliated with any official university system.</span>
+        <span>Built with HTML5, CSS3 &amp; JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

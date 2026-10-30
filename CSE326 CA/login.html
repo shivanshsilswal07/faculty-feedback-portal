@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student login for the Faculty Feedback and Course Evaluation Portal (frontend demo).">
+  <title>Student Login | Faculty Feedback Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portal crest">
+          <circle cx="20" cy="20" r="19" fill="#243B66" stroke="#B1802F" stroke-width="2"/>
+          <path d="M20 10 L30 15 L20 20 L10 15 Z" fill="#F1E2C3"/>
+          <path d="M12 17 V24 C12 27 27 27 28 24 V17" fill="none" stroke="#F1E2C3" stroke-width="1.6"/>
+        </svg>
+        <span>LPU Feedback Portal<span class="brand-sub">Faculty &amp; Course Evaluation</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html" aria-current="page">Student Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses &amp; Faculty</a></li>
+          <li><a href="feedback.html">Give Feedback</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Account</p>
+          <h1>Student Login</h1>
+          <p>Sign in to reach your dashboard and give feedback for your courses.</p>
+        </div>
+
+        <p class="demo-note">
+          <strong>Demo notice:</strong> This is a <em>frontend-only</em> login for a static GitHub Pages project.
+          No password is verified against a real server or database — entering any Student ID and email will
+          simulate a successful login using the browser's <code>localStorage</code>. Do not enter a real password here.
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1.1fr 0.9fr; gap:2.5rem; align-items:flex-start;">
+          <form id="login-form" novalidate>
+            <div id="login-msg" class="form-msg" role="status" aria-live="polite"></div>
+
+            <fieldset>
+              <legend>Sign in</legend>
+
+              <div class="field">
+                <label for="login-id">Student ID</label>
+                <input type="text" id="login-id" name="studentId" placeholder="e.g. 12312345" required
+                       minlength="5" maxlength="15" autocomplete="username">
+                <small class="hint">Your university-issued registration number.</small>
+              </div>
+
+              <div class="field">
+                <label for="login-email">University Email</label>
+                <input type="email" id="login-email" name="email" placeholder="name@university.edu" required
+                       autocomplete="email">
+              </div>
+
+              <div class="field">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" placeholder="Enter your password"
+                       minlength="6" autocomplete="current-password">
+                <small class="hint">Demo only — this value is never stored or checked.</small>
+              </div>
+
+              <div class="field checkbox-option">
+                <input type="checkbox" id="login-remember" name="remember">
+                <label for="login-remember" style="font-weight:400; margin-bottom:0;">Remember me on this device</label>
+              </div>
+            </fieldset>
+
+            <div class="btn-row">
+              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="reset" class="btn btn-ghost">Clear</button>
+            </div>
+          </form>
+
+          <aside class="card" aria-label="Login help">
+            <h3>Why login?</h3>
+            <p>Logging in lets the portal:</p>
+            <ul class="feature-list">
+              <li>Show your dashboard status for each course</li>
+              <li>Pre-fill your Student ID for identified feedback</li>
+              <li>Apply the duplicate-submission check correctly</li>
+            </ul>
+            <hr>
+            <p><small>Choosing <strong>Anonymous</strong> mode later on the feedback form still hides your identity from displayed results, even if you're logged in.</small></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year"></span> LPU Feedback Portal. Academic demo project.</span>
+        <span><a href="about.html" style="color:#cfd5e4;">About this project</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
