@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administrator dashboard summarizing feedback submissions and ratings.">
+  <title>Admin Dashboard | Faculty Feedback Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portal crest">
+          <circle cx="20" cy="20" r="19" fill="#243B66" stroke="#B1802F" stroke-width="2"/>
+          <path d="M20 10 L30 15 L20 20 L10 15 Z" fill="#F1E2C3"/>
+          <path d="M12 17 V24 C12 27 27 27 28 24 V17" fill="none" stroke="#F1E2C3" stroke-width="1.6"/>
+        </svg>
+        <span>LPU Feedback Portal<span class="brand-sub">Faculty &amp; Course Evaluation</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Student Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses &amp; Faculty</a></li>
+          <li><a href="feedback.html">Give Feedback</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="admin.html" aria-current="page">Admin</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Administration</p>
+          <h1>Admin Dashboard</h1>
+          <p>Semester-wide summary of feedback collection and evaluation results.</p>
+        </div>
+
+        <p class="demo-note"><strong>Open for evaluation:</strong> in a real deployment this page would be restricted to authorized staff. This static demo has no server-side access control.</p>
+
+        <div class="card-grid" style="margin-bottom:2.5rem;">
+          <div class="stat-card"><span class="stat-value">412</span><span class="stat-label">Total feedback submissions</span></div>
+          <div class="stat-card"><span class="stat-value">4.42</span><span class="stat-label">Average faculty rating</span></div>
+          <div class="stat-card"><span class="stat-value">4.23</span><span class="stat-label">Average course rating</span></div>
+          <div class="stat-card"><span class="stat-value">96</span><span class="stat-label">Pending evaluations</span></div>
+          <div class="stat-card"><span class="stat-value">316</span><span class="stat-label">Completed evaluations</span></div>
+        </div>
+
+        <!-- ===== FACULTY BAR CHART ===== -->
+        <article style="margin-bottom:2.5rem;">
+          <h2>Faculty performance</h2>
+          <p class="chart-source badge badge-pending"></p>
+          <div class="card" id="faculty-bar-chart" role="img" aria-label="Bar chart of average faculty ratings out of five"></div>
+        </article>
+
+        <!-- ===== COURSE BAR CHART ===== -->
+        <article style="margin-bottom:2.5rem;">
+          <h2>Course ratings</h2>
+          <p class="chart-source badge badge-pending"></p>
+          <div class="card" id="course-bar-chart" role="img" aria-label="Bar chart of average course ratings out of five"></div>
+        </article>
+
+        <!-- ===== FACULTY COMPARISON TABLE ===== -->
+        <article style="margin-bottom:2.5rem;">
+          <h2>Faculty-wise analysis</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Faculty comparison across evaluation criteria (sample data)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Faculty</th>
+                  <th scope="col">Responses</th>
+                  <th scope="col">Clarity</th>
+                  <th scope="col">Effectiveness</th>
+                  <th scope="col">Doubt clarification</th>
+                  <th scope="col">Overall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Dr. P. Kaur</th><td>78</td><td>4.8</td><td>4.7</td><td>4.6</td><td><strong>4.7</strong></td></tr>
+                <tr><th scope="row">Dr. A. Sharma</th><td>91</td><td>4.7</td><td>4.6</td><td>4.4</td><td><strong>4.6</strong></td></tr>
+                <tr><th scope="row">Dr. N. Singh</th><td>64</td><td>4.4</td><td>4.6</td><td>4.5</td><td><strong>4.5</strong></td></tr>
+                <tr><th scope="row">Ms. K. Bhatia</th><td>52</td><td>4.5</td><td>4.3</td><td>4.4</td><td><strong>4.4</strong></td></tr>
+                <tr><th scope="row">Dr. R. Verma</th><td>70</td><td>4.1</td><td>4.3</td><td>4.2</td><td><strong>4.2</strong></td></tr>
+                <tr><th scope="row">Dr. S. Iyer</th><td>57</td><td>4.0</td><td>4.2</td><td>4.1</td><td><strong>4.1</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- ===== COURSE COMPARISON TABLE ===== -->
+        <article style="margin-bottom:2.5rem;">
+          <h2>Course-wise analysis</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Course comparison with collection status (sample data)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Course</th>
+                  <th scope="col">Enrolled</th>
+                  <th scope="col">Responses</th>
+                  <th scope="col">Response rate</th>
+                  <th scope="col">Average rating</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">CSE101</th><td>120</td><td>96</td><td>80%</td><td>4.5</td><td><span class="badge badge-success">Healthy</span></td></tr>
+                <tr><th scope="row">CSE102</th><td>118</td><td>71</td><td>60%</td><td>4.0</td><td><span class="badge badge-pending">Needs reminder</span></td></tr>
+                <tr><th scope="row">CSE103</th><td>110</td><td>88</td><td>80%</td><td>4.6</td><td><span class="badge badge-success">Healthy</span></td></tr>
+                <tr><th scope="row">MTH101</th><td>124</td><td>49</td><td>40%</td><td>3.9</td><td><span class="badge badge-danger">Low response</span></td></tr>
+                <tr><th scope="row">PHY101</th><td>116</td><td>63</td><td>54%</td><td>4.1</td><td><span class="badge badge-pending">Needs reminder</span></td></tr>
+                <tr><th scope="row">ENG101</th><td>102</td><td>45</td><td>44%</td><td>4.3</td><td><span class="badge badge-danger">Low response</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- ===== RECENT WRITTEN FEEDBACK ===== -->
+        <article>
+          <h2>Recent written feedback</h2>
+          <p>Anonymous submissions are displayed without any student identifier.</p>
+          <div class="card-grid">
+            <article class="card">
+              <h3>CSE101 &middot; Dr. A. Sharma</h3>
+              <p><em>"The dry-run walkthroughs on the board made loops click for me. More practice sets before the quiz would help."</em></p>
+              <p class="mb-0"><span class="badge badge-pending">Anonymous</span> <small>06 Nov</small></p>
+            </article>
+            <article class="card">
+              <h3>MTH101 &middot; Dr. S. Iyer</h3>
+              <p><em>"Pace is fast in the last twenty minutes of class. Slides posted a day earlier would let us prepare."</em></p>
+              <p class="mb-0"><span class="badge badge-pending">Anonymous</span> <small>05 Nov</small></p>
+            </article>
+            <article class="card">
+              <h3>CSE104 &middot; Dr. R. Verma</h3>
+              <p><em>"Lab sessions are the strongest part of this course. Theory classes could use more live coding."</em></p>
+              <p class="mb-0"><span class="badge badge-success">Identified &middot; 123xxxxx</span> <small>04 Nov</small></p>
+            </article>
+          </div>
+        </article>
+
+        <aside class="card" style="margin-top:2.5rem;">
+          <h3>Actions an administrator would take next</h3>
+          <ol class="feature-list">
+            <li>Send reminders for courses below a 60% response rate.</li>
+            <li>Share faculty-wise summaries with department heads.</li>
+            <li>Close the feedback window and freeze the semester's data.</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year"></span> LPU Feedback Portal. Academic demo project.</span>
+        <span><a href="about.html" style="color:#cfd5e4;">Project limitations</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
